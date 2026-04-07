@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Choose Plan | RK Premium IPTV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0f1c;
+      font-family: 'Inter', sans-serif;
+      color: #f1f5f9;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* Back button */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+      padding: 0.5rem 1rem;
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+    }
+
+    .back-link:hover {
+      color: #e11d48;
+      background: rgba(225, 29, 72, 0.15);
+      transform: translateX(-4px);
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff, #e11d48);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .portal-name {
+      background: linear-gradient(135deg, #e11d48, #ff6b8a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .page-header p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* Plans Grid - Responsive */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    /* Glassmorphic Plan Card */
+    .plan-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e11d48, #be123c);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .plan-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: #e11d48;
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .plan-card.premium {
+      border-color: #e11d48;
+      background: linear-gradient(180deg, rgba(225, 29, 72, 0.08) 0%, rgba(30, 41, 59, 0.9) 100%);
+      box-shadow: 0 0 20px rgba(225, 29, 72, 0.2);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.4rem 1.3rem;
+      border-radius: 30px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .plan-duration {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .price-block {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+    }
+
+    .currency {
+      font-size: 1.3rem;
+      vertical-align: top;
+      color: #f43f5e;
+      font-weight: 700;
+    }
+
+    .current-price {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .save-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-left: 8px;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .features-list li {
+      font-size: 0.85rem;
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #cbd5e1;
+    }
+
+    .features-list li i {
+      color: #10b981;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    .btn-book {
+      background: #334155;
+      color: white;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .plan-card.premium .btn-book {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+    }
+
+    .btn-book:hover {
+      transform: scale(0.98);
+      filter: brightness(1.1);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .plans-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .plan-card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .current-price {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .plan-card {
+      animation: fadeUp 0.5s ease forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">
+    <i class="fas fa-arrow-left"></i> Back to Store
+  </a>
+
+  <div class="page-header">
+    <h1>Plans for <span class="portal-name" id="portalTitle">Portal</span></h1>
+    <p><i class="fas fa-rocket" style="color: #e11d48;"></i> Select your preferred duration • Instant Telegram delivery</p>
+  </div>
+
+  <div class="plans-grid" id="plansContainer"></div>
+</div>
+
+<script>
+  // Get portal name from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  let portalName = urlParams.get('portal') || "Selected Portal";
+  document.getElementById("portalTitle").innerText = portalName;
+
+  // DYNAMIC PRICING LOGIC (All prices under ₹150)
+  const pricingData = {
+    "starshare": { 1: 59, 3: 89, 6: 119, 12: 149 },
+    "b1g": { 1: 49, 3: 79, 6: 109, 12: 139 },
+    "4kspicetv": { 1: 69, 3: 99, 6: 129, 12: 149 },
+    "newjiotv": { 1: 55, 3: 85, 6: 115, 12: 145 },
+    "zee5": { 1: 65, 3: 95, 6: 125, 12: 149 },
+    "plat4k": { 1: 59, 3: 89, 6: 119, 12: 149 },
+    "alphaott": { 1: 55, 3: 85, 6: 115, 12: 139 },
+    "iristv": { 1: 49, 3: 79, 6: 109, 12: 139 },
+    "true8k": { 1: 69, 3: 99, 6: 129, 12: 149 },
+    "newmaxtv": { 1: 49, 3: 79, 6: 109, 12: 135 },
+    "tvfusion4k": { 1: 59, 3: 89, 6: 119, 12: 145 },
+    "mainlightott": { 1: 45, 3: 75, 6: 105, 12: 135 },
+    "tatatv": { 1: 65, 3: 95, 6: 125, 12: 149 },
+    "cineplus": { 1: 55, 3: 85, 6: 115, 12: 139 },
+    "trexlive": { 1: 49, 3: 79, 6: 109, 12: 139 },
+    "doordarshan": { 1: 39, 3: 69, 6: 99, 12: 129 },
+    "dittotv": { 1: 49, 3: 79, 6: 109, 12: 139 }
+  };
+
+  // Convert portal name to slug (e.g., "4K SpiceTV Portal" -> "4kspicetv")
+  function getPortalSlug(name) {
+    let slug = name.toLowerCase()
+      .replace(/portal/g, '')
+      .replace(/[^a-z0-9]/g, '');
+    
+    // Manual mappings for special cases
+    const specialMaps = {
+      '4kspicetv': '4kspicetv',
+      'newjiotv': 'newjiotv',
+      'starshare': 'starshare',
+      'b1g': 'b1g',
+      'zee5': 'zee5',
+      'plat4k': 'plat4k',
+      'alphaott': 'alphaott',
+      'iristv': 'iristv',
+      'true8k': 'true8k',
+      'newmaxtv': 'newmaxtv',
+      'tvfusion4k': 'tvfusion4k',
+      'mainlightott': 'mainlightott',
+      'tatatv': 'tatatv',
+      'cineplus': 'cineplus',
+      'trexlive': 'trexlive',
+      'doordarshan': 'doordarshan',
+      'dittotv': 'dittotv'
+    };
+    
+    return specialMaps[slug] || slug;
+  }
+
+  const slug = getPortalSlug(portalName);
+  const prices = pricingData[slug] || { 1: 49, 3: 89, 6: 119, 12: 149 };
+
+  // SCALING BENEFITS - Different features for different price tiers
+  const plans = [
+    {
+      duration: "1 Month",
+      price: prices[1],
+      premium: false,
+      popular: false,
+      saveAmount: null,
+      features: [
+        "📺 1 Device Connection",
+        "🎬 HD (720p/1080p) Quality",
+        "📡 7,000+ Live Channels",
+        "🎞️ Basic VOD Library (10,000+)",
+        "💬 Standard Email Support",
+        "⚡ Regular Streaming"
+      ]
+    },
+    {
+      duration: "3 Months",
+      price: prices[3],
+      premium: false,
+      popular: false,
+      saveAmount: prices[3] < prices[1] * 3 ? `Save ₹${(prices[1] * 3) - prices[3]}` : null,
+      features: [
+        "📺 1 Device Connection",
+        "🎬 Full HD 1080p Quality",
+        "📡 9,000+ Live Channels",
+        "🎞️ Full VOD + Series (25,000+)",
+        "💬 Priority Email Support",
+        "🛡️ Anti-Freeze Lite Technology"
+      ]
+    },
+    {
+      duration: "6 Months",
+      price: prices[6],
+      premium: true,
+      popular: true,
+      saveAmount: prices[6] < prices[1] * 6 ? `Save ₹${(prices[1] * 6) - prices[6]}` : null,
+      features: [
+        "📺 2 Device Connections",
+        "🎬 4K Ultra HD Quality",
+        "📡 12,000+ Live Channels",
+        "🎞️ Premium VOD + Series (50,000+)",
+        "🎯 Catch-up TV (7 Days)",
+        "🛡️ Premium Anti-Freeze",
+        "⚡ Priority 24/7 WhatsApp Support"
+      ]
+    },
+    {
+      duration: "12 Months",
+      price: prices[12],
+      premium: true,
+      popular: false,
+      saveAmount: prices[12] < prices[1] * 12 ? `Save ₹${(prices[1] * 12) - prices[12]}` : null,
+      features: [
+        "📺 3 Device Connections",
+        "🎬 4K / 8K Ready Streams",
+        "📡 15,000+ Live Channels",
+        "🎞️ Ultimate VOD (75,000+ Titles)",
+        "🎯 Catch-up TV (14 Days)",
+        "🛡️ Zero Buffering Technology",
+        "👑 VIP Lifetime Support",
+        "🔄 Free Automatic Updates"
+      ]
+    }
+  ];
+
+  const container = document.getElementById("plansContainer");
+  let html = "";
+  
+  plans.forEach((plan, index) => {
+    const delay = index * 0.1;
+    html += `
+      <div class="plan-card ${plan.premium ? 'premium' : ''}" style="animation-delay: ${delay}s">
+        ${plan.popular ? '<div class="popular-badge">🔥 MOST POPULAR</div>' : ''}
+        <div class="plan-duration">${plan.duration}</div>
+        <div class="price-block">
+          <span class="currency">₹</span>
+          <span class="current-price">${plan.price}</span>
+          ${plan.saveAmount ? `<span class="save-badge">${plan.saveAmount}</span>` : ''}
+        </div>
+        <ul class="features-list">
+          ${plan.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+        </ul>
+        <button class="btn-book" onclick="sendToTelegram('${plan.duration}', ${plan.price})">
+          <i class="fab fa-telegram"></i> Select Plan
+        </button>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+
+  // Telegram Checkout Function
+  function sendToTelegram(duration, price) {
+    // Calculate savings message for better presentation
+    let savingsMsg = "";
+    if (duration === "3 Months" && prices[3] < prices[1] * 3) {
+      savingsMsg = `%0A💎 Savings: ₹${(prices[1] * 3) - prices[3]}`;
+    } else if (duration === "6 Months" && prices[6] < prices[1] * 6) {
+      savingsMsg = `%0A💎 Savings: ₹${(prices[1] * 6) - prices[6]}`;
+    } else if (duration === "12 Months" && prices[12] < prices[1] * 12) {
+      savingsMsg = `%0A💎 Savings: ₹${(prices[1] * 12) - prices[12]}`;
+    }
+    
+    const message = `🛒 *NEW IPTV ORDER*%0A%0A📺 *Portal:* ${portalName}%0A📆 *Plan:* ${duration}%0A💰 *Price:* ₹${price}${savingsMsg}%0A%0A✅ *Ready for payment & instant activation*%0A🔗 Waiting for payment confirmation.`;
+    
+    // Open Telegram chat with pre-filled message
+    window.open(`https://t.me/IPTV_AccessBot?text=${message}`, "_blank");
+  }
+</script>
+</body>
+  </html>
