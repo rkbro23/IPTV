@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Premium IPTV Portals - Indian channels, 4K, stable MAC/Stalker & Xtream Codes. Instant activation.">
+  <title>RK Premium IPTV | Premium Portals Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0b0f1c;
+      font-family: 'Inter', sans-serif;
+      color: #f1f5f9;
+      line-height: 1.5;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 10px; }
+
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(11, 15, 28, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(225, 29, 72, 0.3);
+      padding: 1rem 2rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .logo h1 {
+      font-size: 1.5rem; font-weight: 800;
+      background: linear-gradient(135deg, #ffffff, #e11d48);
+      -webkit-background-clip: text; color: transparent;
+    }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: #e2e8f0; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
+    .nav-links a:hover { color: #e11d48; }
+    .nav-btn { background: #e11d48; padding: 0.5rem 1.2rem; border-radius: 30px; color: white !important; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+    /* Premium Hero Section */
+    .hero {
+      position: relative;
+      padding: 6rem 1rem;
+      text-align: center;
+      border-radius: 24px;
+      margin: 2rem 0;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: -2;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(11,15,28,0.7), rgba(11,15,28,0.95));
+      z-index: -1;
+    }
+    .hero h2 {
+      font-size: 3.5rem; font-weight: 900;
+      background: linear-gradient(to right, #fff, #f43f5e);
+      -webkit-background-clip: text; color: transparent;
+      margin-bottom: 1rem; line-height: 1.2;
+    }
+    .hero p { font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 2rem; }
+    .btn-primary {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: white; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      transition: 0.3s; box-shadow: 0 10px 20px rgba(225, 29, 72, 0.4);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(225, 29, 72, 0.6); }
+
+    .section-title { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; border-left: 5px solid #e11d48; padding-left: 1rem; }
+
+    /* Product Grid - 2 Columns on Mobile */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    /* Card Styling with Banners */
+    .product-card {
+      background: #1e293b;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #334155;
+      position: relative;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-8px); border-color: #e11d48; box-shadow: 0 15px 30px rgba(0,0,0,0.6); }
+    
+    .card-banner {
+      width: 100%; height: 160px;
+      background: #0f172a;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid #e11d48;
+    }
+    .card-banner img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: 0.4s ease; opacity: 0.85;
+    }
+    .product-card:hover .card-banner img { transform: scale(1.08); opacity: 1; }
+    
+    .card-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: #e11d48; color: white; font-size: 0.7rem; font-weight: 800;
+      padding: 0.3rem 0.8rem; border-radius: 20px; z-index: 2;
+    }
+    .card-badge.featured { background: #f59e0b; color: #000; }
+
+    .card-content { padding: 1.2rem; display: flex; flex-direction: column; flex: 1; }
+    .card-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; }
+    .product-desc { color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.5rem; flex: 1; line-height: 1.4; }
+    
+    .btn-choose-plan {
+      background: transparent; border: 1px solid #e11d48; color: #e11d48;
+      font-weight: 700; padding: 0.8rem; border-radius: 12px;
+      text-align: center; text-decoration: none; transition: 0.3s;
+      display: block; width: 100%;
+    }
+    .btn-choose-plan:hover { background: #e11d48; color: white; }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .feature-box { background: #1e293b; padding: 2rem; border-radius: 20px; text-align: center; border: 1px solid #334155; }
+    .feature-icon { font-size: 2rem; color: #e11d48; margin-bottom: 1rem; }
+
+    /* Responsive for strictly 2 columns on mobile */
+    @media (max-width: 650px) {
+      .hero { padding: 4rem 1rem; margin: 1rem 0; }
+      .hero h2 { font-size: 2.2rem; }
+      .sticky-nav { justify-content: center; text-align: center; }
+      
+      /* 2 Cards side-by-side */
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+      .card-banner { height: 100px; }
+      .card-content { padding: 0.8rem; }
+      .card-title { font-size: 1rem; }
+      .product-desc { font-size: 0.75rem; margin-bottom: 1rem; }
+      .btn-choose-plan { font-size: 0.8rem; padding: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sticky-nav">
+  <div class="logo"><h1>RK PREMIUM IPTV</h1></div>
+  <div class="nav-links">
+    <a href="#portals">Portals</a>
+    <a href="https://t.me/IPTV_AccessBot" target="_blank" class="nav-btn"><i class="fab fa-telegram"></i> Contact</a>
+  </div>
+</div>
+
+<main class="container">
+  <div class="hero" id="home">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80" alt="bg">
+    <h2>Premium 4K Portals<br>Indian & Global TV</h2>
+    <p>Stable MAC/Stalker & Xtream Codes. Instant Telegram delivery.</p>
+    <a href="#portals" class="btn-primary"><i class="fas fa-play"></i> View Subscriptions</a>
+  </div>
+
+  <div class="section-title" id="portals">🔥 Top Portals</div>
+  <div id="product-grid-container" class="product-grid"></div>
+
+  <div class="section-title">⚡ Why Choose Us</div>
+  <div class="features-grid">
+    <div class="feature-box"><i class="fas fa-bolt feature-icon"></i><h4>Instant Setup</h4></div>
+    <div class="feature-box"><i class="fas fa-rupee-sign feature-icon"></i><h4>Best Prices (< ₹150)</h4></div>
+    <div class="feature-box"><i class="fas fa-headset feature-icon"></i><h4>24/7 Support</h4></div>
+  </div>
+</main>
+
+<script>
+  const portals = [
+    { name: "Starshare", desc: "Xtream + MAC. Premium Indian & Global.", badge: "🔥 BESTSELLER" },
+    { name: "B1G Portal", desc: "Top choice for Indian Live Sports & VOD.", badge: "" },
+    { name: "4K SpiceTV", desc: "Ultra HD Bollywood & South Asian content.", badge: "⭐ 4K QUALITY" },
+    { name: "New JioTV", desc: "Exclusive Jio content & Indian entertainment.", badge: "" },
+    { name: "ZEE5 Portal", desc: "ZEE5 originals & premium live TV.", badge: "" },
+    { name: "PLAT4K Portal", desc: "Crystal clear 4K streams, global channels.", badge: "" },
+    { name: "ALPHA OTT", desc: "Huge VOD & live Indian channels. Xtream.", badge: "" },
+    { name: "IRISTV Portal", desc: "Stable stalker portal, anti-freeze tech.", badge: "" }
+  ];
+
+  // Generates thumbnail banner path
+  function getBannerFileName(name) {
+    let slug = name.toLowerCase().replace(/[^a-z0-9]/g, '').replace('portal', '');
+    return `./banners/${slug}-banner.jpg`; 
+  }
+
+  const container = document.getElementById("product-grid-container");
+  let html = "";
+  portals.forEach((p) => {
+    // Note: ensure you have wide thumbnail images in a 'banners' folder, 
+    // or change the src to standard image links.
+    const bannerPath = getBannerFileName(p.name); 
+    html += `
+      <div class="product-card">
+        ${p.badge ? `<div class="card-badge ${p.badge.includes('4K') ? 'featured' : ''}">${p.badge}</div>` : ''}
+        <div class="card-banner">
+          <img src="${bannerPath}" alt="${p.name} Banner" onerror="this.src='https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="card-content">
+          <div class="card-title">${p.name}</div>
+          <div class="product-desc">${p.desc}</div>
+          <a href="plan.html?portal=${encodeURIComponent(p.name)}" class="btn-choose-plan">View Plans</a>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+</script>
+</body>
+    </html>
+      
