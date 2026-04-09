@@ -296,25 +296,33 @@
   document.getElementById("portalTitle").innerText = portalName;
 
   // DYNAMIC PRICING LOGIC (All prices under ₹150)
-  const pricingData = {
-    "starshare": { 1: 59, 3: 89, 6: 119, 12: 149 },
-    "b1g": { 1: 49, 3: 79, 6: 109, 12: 139 },
-    "4kspicetv": { 1: 69, 3: 99, 6: 129, 12: 149 },
-    "newjiotv": { 1: 55, 3: 85, 6: 115, 12: 145 },
-    "zee5": { 1: 65, 3: 95, 6: 125, 12: 149 },
-    "plat4k": { 1: 59, 3: 89, 6: 119, 12: 149 },
-    "alphaott": { 1: 55, 3: 85, 6: 115, 12: 139 },
-    "iristv": { 1: 49, 3: 79, 6: 109, 12: 139 },
-    "true8k": { 1: 69, 3: 99, 6: 129, 12: 149 },
-    "newmaxtv": { 1: 49, 3: 79, 6: 109, 12: 135 },
-    "tvfusion4k": { 1: 59, 3: 89, 6: 119, 12: 145 },
-    "mainlightott": { 1: 45, 3: 75, 6: 105, 12: 135 },
-    "tatatv": { 1: 65, 3: 95, 6: 125, 12: 149 },
-    "cineplus": { 1: 55, 3: 85, 6: 115, 12: 139 },
-    "trexlive": { 1: 49, 3: 79, 6: 109, 12: 139 },
-    "doordarshan": { 1: 39, 3: 69, 6: 99, 12: 129 },
-    "dittotv": { 1: 49, 3: 79, 6: 109, 12: 139 }
+    const pricingData = {
+    // Premium Tier (High Brand Value / Massive Craze)
+    "starshare": { 1: 149, 3: 229, 6: 289, 12: 349 },
+    "zee5": { 1: 149, 3: 229, 6: 299, 12: 349 },
+    "tatatv": { 1: 149, 3: 229, 6: 299, 12: 349 },
+    "newjiotv": { 1: 139, 3: 219, 6: 279, 12: 339 },
+    "true8k": { 1: 149, 3: 219, 6: 279, 12: 349 },
+
+    // High/Mid Tier (4K Craze & Solid Demand)
+    "4kspicetv": { 1: 139, 3: 209, 6: 269, 12: 329 },
+    "plat4k": { 1: 119, 3: 189, 6: 249, 12: 299 },
+    "tvfusion4k": { 1: 119, 3: 189, 6: 249, 12: 299 },
+    "alphaott": { 1: 109, 3: 179, 6: 239, 12: 289 },
+    "b1g": { 1: 109, 3: 179, 6: 239, 12: 289 },
+    "cineplus": { 1: 109, 3: 179, 6: 239, 12: 289 },
+
+    // Budget Tier (Standard IPTV Portals)
+    "iristv": { 1: 89, 3: 149, 6: 209, 12: 259 },
+    "newmaxtv": { 1: 89, 3: 149, 6: 199, 12: 249 },
+    "trexlive": { 1: 89, 3: 149, 6: 209, 12: 259 },
+    "dittotv": { 1: 89, 3: 149, 6: 199, 12: 249 },
+    "mainlightott": { 1: 79, 3: 139, 6: 189, 12: 239 },
+
+    // Free-to-air logic (Keep it cheap to look genuine)
+    "doordarshan": { 1: 59, 3: 99, 6: 149, 12: 199 }
   };
+  
 
   // Convert portal name to slug (e.g., "4K SpiceTV Portal" -> "4kspicetv")
   function getPortalSlug(name) {
@@ -360,9 +368,9 @@
       features: [
         "📺 1 Device Connection",
         "🎬 HD (720p/1080p) Quality",
-        "📡 7,000+ Live Channels",
-        "🎞️ Basic VOD Library (2000+)",
-        "💬 Standard Email Support",
+        "📡 5500+ Live Channels",
+        "🎞️ Basic VOD Library (1000+)",
+        "💬 Standard Telegram Support",
         "⚡ Regular Streaming"
       ]
     },
@@ -375,8 +383,8 @@
       features: [
         "📺 1 Device Connection",
         "🎬 Full HD 1080p Quality",
-        "📡 6000+ Live Channels",
-        "🎞️ Full VOD + Series (3000+)",
+        "📡 3000+ Live Channels or (depend on Portal plan)",
+        "🎞️ Full VOD + Series (2500+)",
         "💬 Priority Telegram Support",
         "🛡️ Anti-Freeze Lite Technology"
       ]
@@ -390,8 +398,8 @@
       features: [
         "📺 2 Device Connections",
         "🎬 4K Ultra HD Quality",
-        "📡 8000+ Live Channels",
-        "🎞️ Premium VOD + Series (5000+)",
+        "📡 4500+ Live Channels or (depend on Portal plan)",
+        "🎞️ Premium VOD + Series (3000+)",
         "🎯 Catch-up Not Available 🚫",
         "🛡️ Premium Anti-Freeze",
         "⚡ Priority 24/7 WhatsApp Support"
@@ -406,8 +414,8 @@
       features: [
         "📺 3 Device Connections",
         "🎬 4K Ready Streams",
-        "📡 9000+ Live Channels",
-        "🎞️ Ultimate VOD (7000++ Titles)",
+        "📡 5000+ Live Channels or (depend on Portal plan)",
+        "🎞️ Ultimate VOD (4000+ Titles)",
         "🎯 Catch-up Not available🚫)",
         "🛡️ stable Buffering Technology",
         "👑  Lifetime Support",
