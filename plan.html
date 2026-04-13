@@ -296,32 +296,36 @@
   document.getElementById("portalTitle").innerText = portalName;
 
   // DYNAMIC PRICING LOGIC (All prices under ₹150)
-    const pricingData = {
-    // Premium Tier (High Brand Value / Massive Craze)
-    "starshare": { 1: 149, 3: 229, 6: 289, 12: 349 },
-    "zee5": { 1: 149, 3: 229, 6: 299, 12: 349 },
-    "tatatv": { 1: 149, 3: 229, 6: 299, 12: 349 },
-    "newjiotv": { 1: 139, 3: 219, 6: 279, 12: 339 },
-    "true8k": { 1: 149, 3: 219, 6: 279, 12: 349 },
+      const pricingData = {
+    // 👑 Premium Tier (Top Brand Value & Max Demand)
+    "starshare":   { 1: 149, 3: 399, 6: 719, 12: 999 }, // Max capped at 999
+    "zee5":        { 1: 145, 3: 389, 6: 699, 12: 979 },
+    "tatatv":      { 1: 139, 3: 375, 6: 669, 12: 949 },
+    "newjiotv":    { 1: 135, 3: 365, 6: 649, 12: 929 },
+    
+    // 🚀 High Tier (8K/4K Premium Streams)
+    "true8k":      { 1: 129, 3: 349, 6: 619, 12: 899 },
+    "4kspicetv":   { 1: 125, 3: 339, 6: 599, 12: 869 },
+    "plat4k":      { 1: 119, 3: 319, 6: 569, 12: 829 },
+    "tvfusion4k":  { 1: 115, 3: 309, 6: 549, 12: 799 },
 
-    // High/Mid Tier (4K Craze & Solid Demand)
-    "4kspicetv": { 1: 139, 3: 209, 6: 269, 12: 329 },
-    "plat4k": { 1: 119, 3: 189, 6: 249, 12: 299 },
-    "tvfusion4k": { 1: 119, 3: 189, 6: 249, 12: 299 },
-    "alphaott": { 1: 109, 3: 179, 6: 239, 12: 289 },
-    "b1g": { 1: 109, 3: 179, 6: 239, 12: 289 },
-    "cineplus": { 1: 109, 3: 179, 6: 239, 12: 289 },
+    // 📺 Mid Tier (VOD, Movies & Standard Demand)
+    "b1g":         { 1: 109, 3: 295, 6: 519, 12: 759 },
+    "cineplus":    { 1: 105, 3: 285, 6: 499, 12: 729 },
+    "iristv":      { 1: 99,  3: 269, 6: 479, 12: 699 },
+    "trexlive":    { 1: 95,  3: 259, 6: 459, 12: 669 },
 
-    // Budget Tier (Standard IPTV Portals)
-    "iristv": { 1: 89, 3: 149, 6: 209, 12: 259 },
-    "newmaxtv": { 1: 89, 3: 149, 6: 199, 12: 249 },
-    "trexlive": { 1: 89, 3: 149, 6: 209, 12: 259 },
-    "dittotv": { 1: 89, 3: 149, 6: 199, 12: 249 },
-    "mainlightott": { 1: 79, 3: 139, 6: 189, 12: 239 },
+    // 🍿 Standard Tier (Regional & Normal Streams)
+    "newmaxtv":    { 1: 89,  3: 239, 6: 429, 12: 629 },
+    "dittotv":     { 1: 85,  3: 229, 6: 409, 12: 599 },
 
-    // Free-to-air logic (Keep it cheap to look genuine)
-    "doordarshan": { 1: 59, 3: 99, 6: 149, 12: 199 }
+    // 📉 Budget Tier (Minimum ₹69 - Basic VOD/Live)
+    "alphaott":    { 1: 79,  3: 215, 6: 389, 12: 569 }, // Alpha OTT Budget me shift ho gaya
+    "mainlightott":{ 1: 75,  3: 205, 6: 369, 12: 539 },
+    "doordarshan": { 1: 69,  3: 189, 6: 339, 12: 499 }  // Lowest Entry Point
   };
+
+  
   
 
   // Convert portal name to slug (e.g., "4K SpiceTV Portal" -> "4kspicetv")
