@@ -57,9 +57,10 @@
       margin-bottom: 1.5rem;
     }
 
+    /* 🔥 LOGO SIZE INCREASED & MADE LANDSCAPE 🔥 */
     .portal-logo {
-      width: 120px;
-      height: 120px;
+      width: 320px;
+      height: 180px;
       border-radius: 24px;
       background: rgba(30, 41, 59, 0.8);
       backdrop-filter: blur(8px);
@@ -68,14 +69,14 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
       transition: 0.3s ease;
     }
 
     .portal-logo:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       border-color: #e11d48;
-      box-shadow: 0 15px 30px rgba(225, 29, 72, 0.2);
+      box-shadow: 0 18px 40px rgba(225, 29, 72, 0.3);
     }
 
     .portal-logo img {
@@ -92,7 +93,7 @@
       height: 100%;
       background: linear-gradient(135deg, #e11d48, #be123c);
       color: white;
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
 
     .page-header h1 {
@@ -284,9 +285,10 @@
       .current-price {
         font-size: 2.5rem;
       }
+      /* 🔥 MOBILE LOGO SIZE INCREASED 🔥 */
       .portal-logo {
-        width: 90px;
-        height: 90px;
+        width: 240px;
+        height: 135px;
       }
     }
 
@@ -321,7 +323,6 @@
   </a>
 
   <div class="page-header">
-    <!-- Portal Logo Display - Same logic as index.html -->
     <div class="portal-logo-section">
       <div class="portal-logo" id="portalLogoContainer">
         <div id="portalLogoContent">
@@ -341,7 +342,6 @@
   let portalName = urlParams.get('portal') || "Selected Portal";
   document.getElementById("portalTitle").innerText = portalName;
 
-  // ========== LOGO FETCHING LOGIC (SAME AS INDEX.HTML) ==========
   function getBannerImage(portalName) {
     let slug = portalName.toLowerCase()
       .replace(/portal/g, '')
@@ -371,7 +371,6 @@
     return `logos/${fileName}.png`;
   }
 
-  // Display portal logo
   const logoPath = getBannerImage(portalName);
   const logoContainer = document.getElementById("portalLogoContent");
   logoContainer.innerHTML = `
@@ -380,7 +379,6 @@
          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'portal-logo-fallback\\'><i class=\\'fas fa-tv\\'></i></div>';">
   `;
 
-  // ========== PRICING DATA ==========
   const pricingData = {
     "starshare":   { 1: 149, 3: 399, 6: 719, 12: 999 },
     "zee5":        { 1: 145, 3: 389, 6: 699, 12: 979 },
@@ -414,10 +412,8 @@
   }
 
   const slug = getPortalSlug(portalName);
-  // Safe fallback pricing to prevent revenue loss
   const prices = pricingData[slug] || { 1: 109, 3: 295, 6: 519, 12: 759 };
 
-  // ========== PLAN DEFINITIONS ==========
   const plans = [
     {
       duration: "1 Month",
@@ -511,7 +507,6 @@
   
   container.innerHTML = html;
 
-  // ========== TELEGRAM ORDER FUNCTION ==========
   function sendToTelegram(duration, price) {
     let savingsMsg = "";
     if (duration === "3 Months" && prices[3] < prices[1] * 3) {
@@ -524,7 +519,7 @@
     
     const message = `🛒 *NEW IPTV ORDER*%0A%0A📺 *Portal:* ${portalName}%0A📆 *Plan:* ${duration}%0A💰 *Price:* ₹${price}${savingsMsg}%0A%0A✅ *Ready for payment & instant activation*%0A🔗 Waiting for payment confirmation.`;
     
-    window.open(`https://t.me/Nubcarder?text=${message}`, "_blank");
+    window.open(`https://t.me/IPTV_AccessBot?text=${message}`, "_blank");
   }
 </script>
 </body>
