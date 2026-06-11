@@ -1,0 +1,26 @@
+{
+  "UPI": {
+    "method_name": "UPI (GPay/PhonePe)",
+    "address_or_id": "rkiptv@okhdfcbank",
+    "network_info": "Instant payment – UPI ID",
+    "qr_url": "https://i.ibb.co/placeholder/upi-qr.png"
+  },
+  "USDT_TRC20": {
+    "method_name": "USDT (TRC20)",
+    "address_or_id": "TQmFk3z8jJYcVqQvzP9XrL3NmV2WbH5A7E",
+    "network_info": "TRC20 Network – send only USDT",
+    "qr_url": "https://i.ibb.co/placeholder/usdt-qr.png"
+  },
+  "BTC": {
+    "method_name": "Bitcoin (BTC)",
+    "address_or_id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "network_info": "Bitcoin network",
+    "qr_url": "https://i.ibb.co/placeholder/btc-qr.png"
+  },
+  "EPAY": {
+    "method_name": "Epay / Card",
+    "address_or_id": "Merchant ID: RK-IPTV-EPAY",
+    "network_info": "Contact support for card payment",
+    "qr_url": "https://i.ibb.co/placeholder/epay.png"
+  }
+}
