@@ -1,26 +1,26 @@
 {
   "UPI": {
     "method_name": "UPI (GPay/PhonePe)",
-    "address_or_id": "rkiptv@okhdfcbank",
+    "address_or_id": "rkbro9@slc",
     "network_info": "Instant payment – UPI ID",
-    "qr_url": "https://i.ibb.co/placeholder/upi-qr.png"
+    "qr_url": "https://i.ibb.co/MDhd6GCX/Screenshot-20260612-162546-slice.jpg"
   },
-  "USDT_TRC20": {
+  "USDT_NOT AVAILABLE 🚫": {
     "method_name": "USDT (TRC20)",
     "address_or_id": "TQmFk3z8jJYcVqQvzP9XrL3NmV2WbH5A7E",
     "network_info": "TRC20 Network – send only USDT",
-    "qr_url": "https://i.ibb.co/placeholder/usdt-qr.png"
+    "qr_url": "https://i.ibb.co/J920f1V/df6dd8f28aa342789be8bbe3ce7e3b18.png"
   },
-  "BTC": {
+  "BTC_NOT AVAILABLE 🚫": {
     "method_name": "Bitcoin (BTC)",
     "address_or_id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
     "network_info": "Bitcoin network",
-    "qr_url": "https://i.ibb.co/placeholder/btc-qr.png"
+    "qr_url": "https://i.ibb.co/b5K84WfB/bitcoin-logo-6219385-1280.png"
   },
   "EPAY": {
-    "method_name": "Epay / Card",
-    "address_or_id": "Merchant ID: RK-IPTV-EPAY",
-    "network_info": "Contact support for card payment",
-    "qr_url": "https://i.ibb.co/placeholder/epay.png"
+    "method_name": "Epay",
+    "address_or_id": "ben929628@gmail.com",
+    "network_info": "EPAY GLOBAL",
+    "qr_url": "https://i.ibb.co/Qj1GmCnd/images.jpg"
   }
 }
