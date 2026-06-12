@@ -5,13 +5,13 @@
     "network_info": "Instant payment – UPI ID",
     "qr_url": "https://i.ibb.co/MDhd6GCX/Screenshot-20260612-162546-slice.jpg"
   },
-  "USDT_NOT_AVAILABLE 🚫": {
+  "USDT_TRC20": {
     "method_name": "USDT (TRC20)",
     "address_or_id": "TQmFk3z8jJYcVqQvzP9XrL3NmV2WbH5A7E",
     "network_info": "TRC20 Network – send only USDT",
     "qr_url": "https://i.ibb.co/J920f1V/df6dd8f28aa342789be8bbe3ce7e3b18.png"
   },
-  "BTC_NOT_AVAILABLE 🚫": {
+  "BTC": {
     "method_name": "Bitcoin (BTC)",
     "address_or_id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
     "network_info": "Bitcoin network",
