@@ -861,8 +861,24 @@
       if (selectedMethodKey === 'USDT_TRC20') methodLabel = 'USDT (TRC20)';
       else if (selectedMethodKey === 'EPAY') methodLabel = 'Epay/Card';
       const txnIdFinal = rawTxn;
-      const message = `🛒 NEW PAYMENT VERIFICATION 📺 Portal: ${portal} 📆 Plan: ${plan} 💰 Base Amount: ₹${priceINR} 💱 Paid As: ${converted} 🏦 Method: ${methodLabel} 🆔 Order ID: ${orderId} 🔢 Track ID: ${trackId} ✅ User TXN ID: ${txnIdFinal} 🔗 Please verify and issue MAC.`;
+            // 1. Clean aur perfectly spaced message format
+      const message = `🛒 *NEW PAYMENT VERIFICATION*
+
+📺 Portal: ${portal}
+📆 Plan: ${plan}
+💰 Base Amount: ₹${priceINR}
+💱 Paid As: ${converted}
+🏦 Method: ${methodLabel}
+
+🆔 Order ID: ${orderId}
+🔢 Track ID: ${trackId}
+✅ *User TXN ID:* ${txnIdFinal}
+
+🔗 Please verify and issue MAC.`;
+
+      // 2. Encode karke URL banana (isse formatting kabhi break nahi hogi)
       const tgUrl = `https://t.me/nubcarder?text=${encodeURIComponent(message)}`;
+      
       
       const modal = document.getElementById('warningModal');
       modal.classList.add('active');
