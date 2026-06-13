@@ -7,15 +7,15 @@
   },
   "USDT_TRC20": {
     "method_name": "USDT (TRC20)",
-    "address_or_id": "TQmFk3z8jJYcVqQvzP9XrL3NmV2WbH5A7E",
+    "address_or_id": "0x7ea494d26Abcc1E9680c7431A28e05CC7Ea691E7",
     "network_info": "TRC20 Network – send only USDT",
-    "qr_url": "https://i.ibb.co/J920f1V/df6dd8f28aa342789be8bbe3ce7e3b18.png"
+    "qr_url": "https://i.ibb.co/kV5fwsfS/Screenshot-20260614-025008-Trust-Wallet.jpg"
   },
   "BTC": {
     "method_name": "Bitcoin (BTC)",
-    "address_or_id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "address_or_id": "bc1qctfmprqyy8us5aft7ncveuqeg59m9pzlzzr0ww",
     "network_info": "Bitcoin network",
-    "qr_url": "https://i.ibb.co/b5K84WfB/bitcoin-logo-6219385-1280.png"
+    "qr_url": "https://i.ibb.co/60VLFs6t/Screenshot-20260614-024843-Trust-Wallet.jpg"
   },
   "EPAY": {
     "method_name": "Epay",
