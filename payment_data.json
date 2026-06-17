@@ -1,26 +1,3 @@
 {
-  "UPI": {
-    "method_name": "UPI (GPay/PhonePe)",
-    "address_or_id": "rkbro9@slc",
-    "network_info": "Instant payment – UPI ID",
-    "qr_url": "https://i.ibb.co/MDhd6GCX/Screenshot-20260612-162546-slice.jpg"
-  },
-  "USDT_TRC20": {
-    "method_name": "USDT (TRC20)",
-    "address_or_id": "0x7ea494d26Abcc1E9680c7431A28e05CC7Ea691E7",
-    "network_info": "TRC20 Network – send only USDT",
-    "qr_url": "https://i.ibb.co/kV5fwsfS/Screenshot-20260614-025008-Trust-Wallet.jpg"
-  },
-  "BTC": {
-    "method_name": "Bitcoin (BTC)",
-    "address_or_id": "bc1qctfmprqyy8us5aft7ncveuqeg59m9pzlzzr0ww",
-    "network_info": "Bitcoin network",
-    "qr_url": "https://i.ibb.co/60VLFs6t/Screenshot-20260614-024843-Trust-Wallet.jpg"
-  },
-  "EPAY": {
-    "method_name": "Epay",
-    "address_or_id": "ben929628@gmail.com",
-    "network_info": "EPAY GLOBAL",
-    "qr_url": "https://i.ibb.co/Qj1GmCnd/images.jpg"
-  }
+  "rk_payload": "eyJVUEkiOnsibWV0aG9kX25hbWUiOiJVUEkgKEdQYXkvUGhvbmVQZSkiLCJhZGRyZXNzX29yX2lkIjoicmticm85QHNsYyIsIm5ldHdvcmtfaW5mbyI6Ikluc3RhbnQgcGF5bWVudCDigJMgVVBJIElEIiwicXJfdXJsIjoiaHR0cHM6Ly9pLmliYi5jby9NRGhkNkdDWC9TY3JlZW5zaG90LTIwMjYwNjEyLTE2MjU0Ni1zbGljZS5qcGcifSwiVVNEVF9UUkMyMCI6eyJtZXRob2RfbmFtZSI6IlVTRFQgKFRSQzIwKSIsImFkZHJlc3Nfb3JfaWQiOiIweDdlYTQ5NGQyNkFiY2MxRTk2ODBjNzQzMUEyOGUwNUNDN0VhNjkxRTciLCJuZXR3b3JrX2luZm8iOiJUUkMyMCBOZXR3b3JrIOKAmSBzZW5kIG9ubHkgVVNEVCIsInFyX3VybCI6Imh0dHBzOi8vaS5pYmIuY28va1Y1ZndzZlMvU2NyZWVuc2hvdC0yMDI2MDYxNC0wMjUwMDgtVHJ1c3QtV2FsbGV0LmpwZyJ9LCJCQyI6eyJtZXRob2RfbmFtZSI6IkJpdGNvaW4gKEJUQykiLCJhZGRyZXNzX29yX2lkIjoiYmMxcWN0Zm1wcnF5eTh1czVhZnQ3bmN2ZXVxZWc1OW05cHpsenpyMHd3IiwibmV0d29ya19pbmZvIjoiQml0Y29pbiBuZXR3b3JrIiwicXJfdXJsIjoiaHR0cHM6Ly9pLmliYi5jby82MFZMRnM2dC9TY3JlZW5zaG90LTIwMjYwNjE0LTAyNDg0My1UcnVzdC1XYWxsZXQuanBnIn0sIkVQQVkiOnsibWV0aG9kX25hbWUiOiJFcGF5IiwiYWRkcmVzc19vcl9pZCI6ImJlbjkyOTYyOEBnbWFpbC5jb20iLCJuZXR3b3JrX2luZm8iOiJFUEFZIEdMT0JBTCIsInFyX3VybCI6Imh0dHBzOi8vaS5pYmIuY28vUWoxR21DbmQvaW1hZ2VzLmpwZyJ9fQ=="
 }
