@@ -774,5 +774,28 @@
     }, 100);
   })();
 </script>
+
+  <script>
+  setInterval(function() {
+    console.clear();
+    console.log("%cCHUTIYA \uD83E\uDD2D", "color: #e11d48; font-size: 80px; font-weight: 900; font-family: sans-serif; text-shadow: 2px 2px 0 #fff;");
+    console.log("%cHTML edit karke NASA hack karega kya beta ji? 😂", "color: #facc15; font-size: 24px; font-weight: bold;");
+
+    if (window.innerWidth > 768) {
+      const widthThreshold = window.outerWidth - window.innerWidth > 160;
+      const heightThreshold = window.outerHeight - window.innerHeight > 160;
+      
+      if (widthThreshold || heightThreshold) {
+        document.body.innerHTML = `
+          <div style="background:#000; height:100vh; width:100vw; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#e11d48; font-family:sans-serif; text-align:center; padding:20px;">
+            <h1 style="font-size: 50px; margin-bottom: 20px;">🤡 Khela Khatam!</h1>
+            <p style="color: #fff; font-size: 20px;">Bhai HTML edit karke kya ukhad lega? Jaa real skills laa!</p>
+            <img src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif" style="margin-top: 30px; max-width: 300px; border-radius: 20px;">
+          </div>
+        `;
+      }
+    }
+  }, 500); 
+  </script>
 </body>
 </html>
