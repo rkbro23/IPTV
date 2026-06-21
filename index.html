@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Maintenance · RK Premium IPTV</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ----- Reset & Base ----- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0B0F19;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(56, 189, 248, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(56, 189, 248, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(56, 189, 248, 0.03) 0%, transparent 40%);
+        }
+
+        /* ----- Main Card ----- */
+        .maintenance-card {
+            max-width: 720px;
+            width: 100%;
+            background: #111827;
+            border-radius: 2.5rem;
+            padding: 3rem 2.5rem 2.5rem;
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(56, 189, 248, 0.08),
+                0 0 40px rgba(56, 189, 248, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .maintenance-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* subtle top accent line */
+        .maintenance-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+            border-radius: 0 0 100% 100%;
+        }
+
+        /* ----- Illustration ----- */
+        .illustration-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .illustration-wrapper svg {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 8px 30px rgba(56, 189, 248, 0.12));
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .illustration-wrapper svg:hover {
+            transform: scale(1.02) translateY(-4px);
+        }
+
+        /* ----- Typography ----- */
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.10);
+            color: #38BDF8;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            margin-bottom: 1rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .heading {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #F8FAFC;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .heading span {
+            color: #38BDF8;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(248, 250, 252, 0.7);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+
+        .description strong {
+            color: rgba(248, 250, 252, 0.9);
+            font-weight: 600;
+        }
+
+        /* ----- Feature Pills ----- */
+        .feature-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem 1rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .feature-pills span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(248, 250, 252, 0.6);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-pills i {
+            color: #38BDF8;
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        /* ----- CTA Button ----- */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #38BDF8, #0EA5E9);
+            color: #0B0F19;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.9rem 2.8rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-telegram::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+            pointer-events: none;
+            border-radius: 100px;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 35px rgba(56, 189, 248, 0.4);
+            background: linear-gradient(135deg, #4FC9FF, #1AA9E8);
+        }
+
+        .btn-telegram:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-telegram i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-telegram:hover i {
+            transform: rotate(-6deg) scale(1.05);
+        }
+
+        .cta-sub {
+            font-size: 0.8rem;
+            color: rgba(248, 250, 252, 0.3);
+            letter-spacing: 0.02em;
+            margin-top: 0.2rem;
+        }
+
+        /* ----- Footer ----- */
+        .footer {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: rgba(248, 250, 252, 0.15);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer span {
+            color: rgba(56, 189, 248, 0.2);
+        }
+
+        /* ----- Responsive ----- */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .maintenance-card {
+                padding: 2rem 1.5rem 1.8rem;
+                border-radius: 1.8rem;
+            }
+
+            .heading {
+                font-size: 1.75rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                padding: 0 0.25rem;
+            }
+
+            .illustration-wrapper svg {
+                max-width: 200px;
+            }
+
+            .btn-telegram {
+                font-size: 0.95rem;
+                padding: 0.8rem 2rem;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .feature-pills {
+                gap: 0.4rem 0.7rem;
+            }
+
+            .feature-pills span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.8rem;
+            }
+
+            .badge {
+                font-size: 0.6rem;
+                padding: 0.25rem 0.8rem;
+            }
+
+            .footer {
+                font-size: 0.6rem;
+                margin-top: 2rem;
+                padding-top: 1.4rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .maintenance-card {
+                padding: 1.5rem 1rem 1.5rem;
+            }
+
+            .heading {
+                font-size: 1.5rem;
+            }
+
+            .description {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* ----- Accessibility / Motion ----- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ----- selection ----- */
+        ::selection {
+            background: rgba(56, 189, 248, 0.25);
+            color: #F8FAFC;
+        }
+
+        /* scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 100px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="maintenance-card" role="main">
+
+        <!-- Illustration -->
+        <div class="illustration-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background subtle grid -->
+                <rect x="0" y="0" width="400" height="300" rx="20" fill="transparent" />
+
+                <!-- Server rack base -->
+                <rect x="80" y="140" width="240" height="120" rx="8" fill="#1E293B" stroke="#2D3A4F" stroke-width="1.5" />
+                <rect x="88" y="148" width="224" height="104" rx="4" fill="#0F172A" stroke="#2D3A4F" stroke-width="1" />
+
+                <!-- Server blades -->
+                <rect x="100" y="158" width="200" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="0.8" />
+                <rect x="100" y="178" width="200" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="0.8" />
+                <rect x="100" y="198" width="200" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="0.8" />
+                <rect x="100" y="218" width="200" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="0.8" />
+
+                <!-- LED indicators on blades -->
+                <circle cx="110" cy="165" r="2.5" fill="#38BDF8" opacity="0.9" />
+                <circle cx="122" cy="165" r="2.5" fill="#38BDF8" opacity="0.5" />
+                <circle cx="134" cy="165" r="2.5" fill="#4ADE80" opacity="0.7" />
+
+                <circle cx="110" cy="185" r="2.5" fill="#38BDF8" opacity="0.9" />
+                <circle cx="122" cy="185" r="2.5" fill="#FACC15" opacity="0.6" />
+                <circle cx="134" cy="185" r="2.5" fill="#38BDF8" opacity="0.5" />
+
+                <circle cx="110" cy="205" r="2.5" fill="#4ADE80" opacity="0.7" />
+                <circle cx="122" cy="205" r="2.5" fill="#38BDF8" opacity="0.9" />
+                <circle cx="134" cy="205" r="2.5" fill="#38BDF8" opacity="0.5" />
+
+                <circle cx="110" cy="225" r="2.5" fill="#38BDF8" opacity="0.9" />
+                <circle cx="122" cy="225" r="2.5" fill="#38BDF8" opacity="0.5" />
+                <circle cx="134" cy="225" r="2.5" fill="#4ADE80" opacity="0.7" />
+
+                <!-- Glowing data lines on blades -->
+                <rect x="150" y="161" width="60" height="2" rx="1" fill="#38BDF8" opacity="0.2" />
+                <rect x="150" y="181" width="45" height="2" rx="1" fill="#38BDF8" opacity="0.15" />
+                <rect x="150" y="201" width="70" height="2" rx="1" fill="#38BDF8" opacity="0.2" />
+                <rect x="150" y="221" width="35" height="2" rx="1" fill="#38BDF8" opacity="0.15" />
+
+                <!-- Robot / developer figure -->
+                <!-- Head -->
+                <circle cx="280" cy="120" r="22" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+                <!-- Visor -->
+                <rect x="268" y="112" width="24" height="12" rx="3" fill="#0B0F19" stroke="#38BDF8" stroke-width="1.2" />
+                <!-- Visor glow -->
+                <rect x="270" y="114" width="20" height="8" rx="2" fill="#38BDF8" opacity="0.15" />
+                <circle cx="274" cy="118" r="2" fill="#38BDF8" opacity="0.6" />
+                <circle cx="286" cy="118" r="2" fill="#38BDF8" opacity="0.6" />
+
+                <!-- Antenna -->
+                <line x1="280" y1="98" x2="280" y2="84" stroke="#334155" stroke-width="2" />
+                <circle cx="280" cy="82" r="3.5" fill="#38BDF8" opacity="0.6" />
+
+                <!-- Body -->
+                <rect x="262" y="140" width="36" height="28" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+                <!-- Chest light -->
+                <circle cx="280" cy="150" r="3" fill="#38BDF8" opacity="0.3" />
+                <circle cx="280" cy="150" r="1.5" fill="#38BDF8" opacity="0.8" />
+
+                <!-- Arms -->
+                <!-- Left arm holding wrench -->
+                <line x1="262" y1="146" x2="244" y2="132" stroke="#334155" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="244" y1="132" x2="238" y2="142" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+                <!-- Wrench -->
+                <rect x="232" y="136" width="14" height="4" rx="1.5" fill="#64748B" transform="rotate(-30 239 138)" />
+                <rect x="230" y="138" width="6" height="6" rx="1.5" fill="#94A3B8" transform="rotate(-30 233 141)" />
+
+                <!-- Right arm -->
+                <line x1="298" y1="146" x2="316" y2="130" stroke="#334155" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="316" y1="130" x2="320" y2="138" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+
+                <!-- Legs -->
+                <rect x="270" y="168" width="8" height="16" rx="2" fill="#1E293B" stroke="#334155" stroke-width="1" />
+                <rect x="282" y="168" width="8" height="16" rx="2" fill="#1E293B" stroke="#334155" stroke-width="1" />
+
+                <!-- Floating data packets / particles -->
+                <circle cx="140" cy="90" r="3" fill="#38BDF8" opacity="0.15" />
+                <circle cx="160" cy="70" r="2" fill="#38BDF8" opacity="0.1" />
+                <circle cx="120" cy="65" r="1.5" fill="#38BDF8" opacity="0.08" />
+                <circle cx="180" cy="100" r="2.5" fill="#38BDF8" opacity="0.12" />
+                <circle cx="210" cy="80" r="1.8" fill="#38BDF8" opacity="0.1" />
+
+                <!-- Connection lines from server to robot -->
+                <path d="M200 170 L262 150" stroke="#38BDF8" stroke-width="0.8" opacity="0.15" stroke-dasharray="4 4" />
+                <path d="M200 190 L262 155" stroke="#38BDF8" stroke-width="0.8" opacity="0.1" stroke-dasharray="3 5" />
+
+                <!-- Small pulse rings around server -->
+                <circle cx="190" cy="170" r="30" stroke="#38BDF8" stroke-width="0.5" opacity="0.08" fill="none" />
+                <circle cx="190" cy="170" r="45" stroke="#38BDF8" stroke-width="0.5" opacity="0.05" fill="none" />
+
+                <!-- "4K" badge -->
+                <rect x="310" y="100" width="42" height="18" rx="4" fill="#38BDF8" opacity="0.08" stroke="#38BDF8" stroke-width="0.8" />
+                <text x="317" y="113" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#38BDF8" opacity="0.6">4K</text>
+
+                <!-- "UPGRADE" text -->
+                <rect x="20" y="200" width="50" height="14" rx="3" fill="#38BDF8" opacity="0.05" />
+                <text x="24" y="210" font-family="Inter, sans-serif" font-size="6" font-weight="600" fill="#38BDF8" opacity="0.3" letter-spacing="0.12em">UPGRADE</text>
+
+                <!-- "PREMIUM" -->
+                <rect x="310" y="200" width="60" height="14" rx="3" fill="#38BDF8" opacity="0.05" />
+                <text x="315" y="210" font-family="Inter, sans-serif" font-size="6" font-weight="600" fill="#38BDF8" opacity="0.3" letter-spacing="0.12em">PREMIUM</text>
+
+                <!-- Glow spots -->
+                <circle cx="80" cy="200" r="60" fill="#38BDF8" opacity="0.02" />
+                <circle cx="320" cy="120" r="40" fill="#38BDF8" opacity="0.02" />
+            </svg>
+        </div>
+
+        <!-- Content -->
+        <div style="text-align: center; position: relative; z-index: 1;">
+
+            <div class="badge">
+                <i class="fas fa-sync-alt" style="margin-right: 0.4rem; font-size: 0.6rem;"></i>
+                System Upgrade in Progress
+            </div>
+
+            <h1 class="heading">
+                We're Upgrading <br /><span>Our Systems!</span>
+            </h1>
+
+            <p class="description">
+                <strong>RK Premium IPTV</strong> is temporarily offline while we
+                <strong>restock fresh 4K portals</strong>, replace proxies, and
+                optimize our backend for <strong>blazing-fast performance</strong>.
+                <br /><br />
+                Your account and data are completely safe — this is a massive
+                upgrade to deliver an even better viewing experience.
+            </p>
+
+            <!-- Feature pills -->
+            <div class="feature-pills">
+                <span><i class="fas fa-check-circle"></i> 4K Portals</span>
+                <span><i class="fas fa-bolt"></i> Faster Proxies</span>
+                <span><i class="fas fa-shield-alt"></i> Enhanced Security</span>
+                <span><i class="fas fa-server"></i> Backend Optimization</span>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-group">
+                <a href="https://t.me/rkbro23" target="_blank" rel="noopener noreferrer" class="btn-telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                    Contact Us on Telegram
+                </a>
+                <span class="cta-sub">We'll notify you the moment we're back</span>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            RK Premium IPTV <span>•</span> 2026
+        </div>
+
+    </main>
+
+</body>
+  </html>
