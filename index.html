@@ -698,33 +698,30 @@
     { name: "DD Portal", desc: "Doordarshan channels, regional content, stable stalker portal subscription.", badge: "Available 🤭" }
   ];
 
-function getBannerImage(portalName) {
-  let slug = portalName
-    .toLowerCase()
-    .replace(/portal/g, '')
-    .replace(/[^a-z0-9]/g, '');
-
-  const specialMaps = Object.freeze({
-    newjiotv: 'jeotv',
-    zee5: 'xee5',
-    jeotv: 'jeotv',
-    xee5: 'xee5',
-    '4kspicetv': '4kspicetv',
-    plat4k: 'plat4k',
-    alphaott: 'alphaott',
-    iristv: 'iristv',
-    starshare: 'starshare',
-    b1g: 'b1g',
-    dittotv: 'dittotv',
-    true8k: 'true8k',
-    newmaxtv: 'newmaxtv',
-    tvfusion4k: 'tvfusion4k',
-    mainlightott: 'mainlightott',
-    tatatv: 'tatatv',
-    cineplus: 'cineplus',
-    trexlive: 'trexlive',
-    doordarshan: 'doordarshan'
-  });
+  function getBannerImage(portalName) {
+    let slug = portalName.toLowerCase()
+      .replace(/portal/g, '')
+      .replace(/[^a-z0-9]/g, '');
+    
+    const specialMaps = {
+      '4kspicetv': '4kspicetv',
+      'newjeotv': 'newjiotv',
+      'xee5': 'zee5',
+      'plat4k': 'plat4k',
+      'alphaott': 'alphaott',
+      'iristv': 'iristv',
+      'starshare': 'starshare',
+      'b1g': 'b1g',
+      'dittotv': 'dittotv',
+      'true8k': 'true8k',
+      'newmaxtv': 'newmaxtv',
+      'tvfusion4k': 'tvfusion4k',
+      'mainlightott': 'mainlightott',
+      'tatatv': 'tatatv',
+      'cineplus': 'cineplus',
+      'trexlive': 'trexlive',
+      'doordarshan': 'doordarshan'
+    };
 
   slug = specialMaps[slug] || slug;
 
