@@ -420,11 +420,11 @@
   function getPortalSlug(name) {
     let slug = name.toLowerCase().replace(/portal/g, '').replace(/[^a-z0-9]/g, '');
     const specialMaps = {
-      '4kspicetv': '4kspicetv', 'newjiotv': 'newjiotv', 'starshare': 'starshare',
-      'b1g': 'b1g', 'zee5': 'zee5', 'plat4k': 'plat4k', 'alphaott': 'alphaott',
+      '4kspicetv': '4kspicetv', 'newjeotv': 'newjiotv', 'starshare': 'starshare',
+      'b1g': 'b1g', 'xee5': 'zee5', 'plat4k': 'plat4k', 'alphaott': 'alphaott',
       'iristv': 'iristv', 'true8k': 'true8k', 'newmaxtv': 'newmaxtv', 'tvfusion4k': 'tvfusion4k',
       'mainlightott': 'mainlightott', 'tatatv': 'tatatv', 'cineplus': 'cineplus',
-      'trexlive': 'trexlive', 'doordarshan': 'doordarshan', 'dittotv': 'dittotv'
+      'trexlive': 'trexlive', 'dd': 'doordarshan', 'dittotv': 'dittotv'
     };
     return specialMaps[slug] || slug;
   }
